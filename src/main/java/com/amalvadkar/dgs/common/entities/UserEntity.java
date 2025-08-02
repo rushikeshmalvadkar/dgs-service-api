@@ -21,6 +21,9 @@ public class UserEntity extends AbstractBaseEntity {
   @Column(name = "last_login_time")
   private Instant lastLoginTime;
 
+  @Column(name="active", nullable = false)
+  private boolean active;
+
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "role_id", nullable = false)
   private RoleEntity roleEntity;
